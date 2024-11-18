@@ -22,12 +22,12 @@
         </div>
     </div>
 
-    
+    {{ $posts->links() }}
+
     <div class="py-4 px-4 mx-auto max-w-screen-xl lg:py-4 lg:px-0">
         <div class="grid gap-8 mg:grid-cols-2 lg:grid-cols-3">
 
     @foreach ($posts as $post)
-          
 
     {{-- <article class="py-8 max-w-screen-md border-b border-gray-300">
         <a href="/posts/{{ $post['slug'] }}" class="hover:underline">
@@ -45,7 +45,6 @@
         </p>
         <a href="/posts/{{ $post['slug'] }}" class="font-medium text-blue-500 hover:underline">Read More &raquo;</a>
     </article> --}}
-
 
                 <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex justify-between items-center mb-5 text-gray-500">
@@ -79,5 +78,7 @@
     @endforeach
         </div>  
     </div>
+
+    {{ $posts->links() }}
        
 </x-layout>
