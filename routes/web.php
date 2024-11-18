@@ -18,11 +18,8 @@ Route::get('/about', function () {
 
 
 Route::get('/posts',function(){
-    // $posts = Post::with(['author', 'category'])->latest()->get();
-    // return view('posts',['title'=> 'Blog', 'posts' => $posts]);
-    
-    return view('posts', ['title' => 'Blog', 'posts' => Post::all()]);
-});
+    return view('posts', ['title' => 'Blog', 'posts' => Post::filter(request(['search']))->latest()->get()]);
+} );
 
 Route :: get('/posts/{post:slug}', function(Post $post){
     return view ('post', ['title' => 'Single Post', 'post' =>$post]);
