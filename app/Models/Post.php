@@ -13,6 +13,8 @@ class Post extends Model
     // Properti dan metode lainnya pada model Post
     protected $fillable = ['title', 'author', 'slug', 'body'];
 
+    protected $with = ['author', 'category'];
+    
     public function author(): BelongsTo 
     {
         return $this->belongsTo(User::class);
